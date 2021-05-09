@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <!-- axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <!-- nav header -->
+      <div class="nav-header">
+        <img src="images/logo_rd.svg" class="logo" alt="logo" />
+      </div>
+      <!-- social media -->
+      <ul class="social-icons">
+        <li>
+          <a href="https://www.twitter.com">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.twitter.com">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- METEO -->
+    <main>
+      <section class="panel">
+        <header class="panel-header">
+          <h2>METEO</h2>
+          <i class="fas fa-cloud-sun"></i>
+        </header>
+        <div class="input-city">
+          <input type="text" placeholder="Ville" class="input_text" />
+          <input type="submit" value="Valider" class="submit" />
+        </div>
+        <div class="card">
+          <h2 class="name" id="name"></h2>
+          <p class="temp"></p>
+          <p class="desc"></p>
+        </div>
+      </section>
+
+      <!-- CALCULATRICE -->
+      <section class="panel">
+        <header class="panel-header">
+          <h2>CALCULATRICE</h2>
+          <i class="fas fa-calculator"></i>
+        </header>
+        <div id="calculator" class="calculator">
+          <div class="button-grid-top">
+            <button id="clear" class="clear">C</button>
+            <div id="viewer" class="viewer">0</div>
+          </div>
+
+          <div class="button-grid">
+            <button class="num" data-num="7">7</button>
+            <button class="num" data-num="8">8</button>
+            <button class="num" data-num="9">9</button>
+            <button data-ops="plus" class="ops">+</button>
+
+            <button class="num" data-num="4">4</button>
+            <button class="num" data-num="5">5</button>
+            <button class="num" data-num="6">6</button>
+            <button data-ops="minus" class="ops">-</button>
+
+            <button class="num" data-num="1">1</button>
+            <button class="num" data-num="2">2</button>
+            <button class="num" data-num="3">3</button>
+            <button data-ops="times" class="ops">*</button>
+
+            <button class="num" data-num="0">0</button>
+            <button class="num" data-num=".">.</button>
+            <button id="equals" class="equals" data-result="">=</button>
+            <button data-ops="divided by" class="ops">/</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONVERSION -->
+      <section class="panel">
+        <header class="panel-header">
+          <h2>CONVERSION</h2>
+          <i class="fas fa-ruler"></i>
+        </header>
+        <div class="conversion-grid">
+          <article class="feet">
+            <p>ft</p>
+            <input
+              class="conversion-input"
+              id="input-feet"
+              type="number"
+              placeholder="ft"
+            />
+          </article>
+
+          <article class="meters">
+            <p>m</p>
+            <input
+              class="conversion-input"
+              id="input-meters"
+              type="number"
+              placeholder="m"
+            />
+          </article>
+
+          <article class="cm">
+            <p>cm</p>
+            <input
+              class="conversion-input"
+              id="input-cm"
+              type="number"
+              placeholder="cm"
+            />
+          </article>
+
+          <article class="mm">
+            <p>mm</p>
+            <input
+              class="conversion-input"
+              id="input-mm"
+              type="number"
+              placeholder="mm"
+            />
+          </article>
+        </div>
+      </section>
+
+      <!-- FETE -->
+
+      <section class="panel">
+        <header class="panel-header">
+          <h2>FÊTE DU JOUR</h2>
+          <i class="fas fa-cloud-sun"></i>
+        </header>
+        <div class="input-city">
+          <input type="text" placeholder="Ville" class="input_text" />
+          <input type="submit" value="Valider" class="submit" />
+        </div>
+        <div class="card">
+          <h2 class="name" id="name"></h2>
+          <p class="temp"></p>
+          <p class="desc"></p>
+        </div>
+      </section>
+    </main>
+
+    <script src="static/bundle.js"></script>
+  </body>
+</html>
