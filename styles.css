@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
 
-/* BASE */
+/*------------------- BASE -------------------*/
 
 * {
   margin: 0;
@@ -32,14 +32,14 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-section {
+.panel {
   background: white;
   width: 80vw;
   height: 32rem;
   margin: 1rem auto;
   border-radius: 10px;
   box-shadow: 0px 0px 10px 0px rgb(0, 0, 0, 0.1);
-  /* ACCORDION */
+  /* ACCORDEON */
   max-height: 4rem;
   overflow: hidden;
   transition: all 0.5s ease-out;
@@ -53,7 +53,7 @@ section {
   background: rgb(240, 244, 244);
 }
 
-section header {
+.panel header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -61,59 +61,136 @@ section header {
   transition: all 0.5s ease-out;
 }
 
-section header h2 {
+.panel header:hover {
+  background: rgb(240, 244, 244);
+}
+
+.panel header h2 {
   font-size: 1.25rem;
 }
-section header i {
+.panel header i {
   font-size: 2rem;
 }
 
-/* NAV */
+/*------------------- NAV -------------------*/
 
 nav {
+  background: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 0 auto 3rem;
-  padding: 1rem 5vw;
-  background: white;
+  padding: 1rem 10vw;
+
+  /* STICKY NAV */
+  /* position: sticky;
+  top: 0;
+  z-index: 999; */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  animation-name: slideOut;
-  animation-duration: 2s;
-  animation-iteration-count: 1;
-  animation-timing-function: ease-in-out;
+  animation: 2s ease-out 0s 1 forwards running slideOut;
 }
 
 @keyframes slideOut {
   0% {
-    padding: 1rem 25vw;
+    padding: 1rem 20vw;
   }
   100% {
-    padding: 1rem 5vw;
+    padding: 1rem 10vw;
+  }
+}
+
+nav h1 {
+  font-size: 1rem;
+  letter-spacing: 0.25rem;
+  opacity: 0;
+  animation: 1s ease-out 1.5s 1 forwards running fadeIn;
+  color: #201e40;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
 .logo {
-  height: 3rem;
-  filter: invert(11%) sepia(54%) saturate(834%) hue-rotate(206deg)
-    brightness(93%) contrast(96%);
+  height: 2rem;
+  filter: invert(21%) sepia(10%) saturate(1736%) hue-rotate(169deg)
+    brightness(98%) contrast(91%);
+  animation: 1s ease-out 0s 1 forwards running fadeIn;
 }
 
 .social-icons {
   display: flex;
+  justify-content: space-between;
+  width: 4rem;
+  animation: 1s ease-out 0s 1 forwards running fadeIn;
 }
 
 .social-icons i {
-  color: #201e40;
-  padding-left: 1rem;
-  font-size: 2rem;
+  font-size: 1.25rem;
+  color: #2c3e50;
+
+  /* CIRCLE BORDER */
+  /* display: inline-block;
+  border: 1px #201e40 solid;
+  border-radius: 50%;
+  padding: 0.5em 0.6em; */
 }
 
-/* METEO */
+/*------------------- HERO -------------------*/
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  width: 85vw;
+  height: 40rem;
+  margin: 0 auto;
+}
+
+.hero article {
+  justify-self: center;
+}
+
+.hero article img {
+  width: 20rem;
+}
+
+.hero-header {
+  position: relative;
+  justify-self: center;
+}
+
+.hero-header h2 {
+  font-size: 3.5rem;
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero-header h2:nth-child(2) {
+  position: absolute;
+  font-size: 4.5rem;
+  color: rgba(255, 255, 255, 0.25);
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05);
+  top: 2.5%;
+  left: 2.5%;
+  z-index: -1;
+}
+
+.hero-header p {
+  margin-top: 3rem;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+/*------------------- METEO -------------------*/
 
 .input-city {
-  text-align: center;
   margin: 1.5rem 0rem;
+  text-align: center;
 }
 
 .input-city input[type="submit"] {
@@ -122,11 +199,11 @@ nav {
   padding: 1rem 0.5rem;
   border: none;
   border-radius: 5px;
-  font-weight: bold;
   font-size: 1rem;
+  color: #2c3e50;
+  font-weight: 600;
   text-align: center;
   transition: all 0.5s;
-  color: #2c3e50;
 }
 
 .input-city input[type="submit"]:hover {
@@ -149,8 +226,8 @@ nav {
 }
 
 .card {
-  width: 86%;
   background: #e7e7e7;
+  width: 86%;
   height: 18rem;
   margin: 0rem auto 1rem;
   border-radius: 15px;
@@ -171,48 +248,47 @@ nav {
   width: 10rem;
 }
 
-/* CALCULATRICE */
+/*------------------- CALCULATRICE -------------------*/
 
 .calculator {
-  font-size: 1.5rem;
   margin: 0 auto;
+  font-size: 1.5rem;
 }
 
 .viewer {
+  font-size: 2rem;
   color: #c97874;
+  font-weight: 700;
   text-align: right;
   text-overflow: ellipsis;
   overflow: hidden;
-  font-size: 2rem;
-  font-weight: 700;
 }
 
 .button-grid-top {
   display: grid;
   grid-template-columns: 1fr 3fr;
-  align-items: center;
   justify-items: center;
+  align-items: center;
   margin: 1.5rem 0;
 }
 
 .button-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  align-items: center;
   justify-items: center;
+  align-items: center;
 }
 
 .button-grid-top button,
 .button-grid button {
   border: 0;
   background: #e7e7e7;
-  color: #2c3e50;
-  cursor: pointer;
-  float: left;
-  font: inherit;
-  margin: 0.5rem;
   width: 3.25rem;
   height: 3.25rem;
+  margin: 0.5rem;
+  color: #2c3e50;
+  cursor: pointer;
+  font: inherit;
   transition: all 0.5s;
 }
 
@@ -225,11 +301,12 @@ button:focus {
   outline: 0;
 }
 
-/* CONVERSION */
+/*------------------- CONVERSION -------------------*/
 
 .conversion-grid {
   display: grid;
   grid-template-columns: 1fr;
+  margin-top: 0.5rem;
 }
 
 .conversion-grid article {
@@ -241,18 +318,55 @@ button:focus {
 
 .conversion-grid p {
   width: 2.5rem;
-  border-radius: 5px;
-  font-size: 1.5rem;
   padding: 1rem 0;
+  font-size: 1.5rem;
+  border-radius: 5px;
 }
 
 .conversion-input {
-  width: 70%;
   background: #e7e7e7;
+  width: 70%;
+  padding: 0 0.5rem;
+  font-size: 1rem;
   border: none;
   border-radius: 5px;
-  font-size: 1rem;
-  padding: 0 0.5rem;
+}
+
+/*------------------- FOOTER -------------------*/
+
+footer {
+  background: #2c3e50;
+  margin-top: 4rem;
+}
+
+.footer-center {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  row-gap: 1.5rem;
+  justify-items: left;
+  align-items: center;
+  width: 90vw;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.footer-center a {
+  font-size: 0.9rem;
+  color: white;
+}
+
+.footer-center .logo {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(108deg)
+    brightness(104%) contrast(104%);
+}
+
+.footer-center i {
+  color: white;
+}
+
+.footer-center h4 {
+  font-size: 0.8rem;
+  color: white;
 }
 
 @media (min-width: 1000px) {
@@ -260,7 +374,42 @@ button:focus {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
-  section {
+
+  @keyframes slideOut {
+    0% {
+      padding: 1rem 35vw;
+    }
+    100% {
+      padding: 1rem 10vw;
+    }
+  }
+
+  .hero {
+    width: 85vw;
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .hero-header h2 {
+    font-size: 5rem;
+  }
+
+  .hero-header h2:nth-child(2) {
+    font-size: 6rem;
+  }
+
+  .hero-header p {
+    font-size: 1.5rem;
+  }
+
+  .hero article img {
+    width: 25rem;
+  }
+
+  nav h1 {
+    font-size: 1.25rem;
+  }
+
+  .panel {
     width: 40vw;
   }
 
@@ -274,5 +423,10 @@ button:focus {
 
   .conversion-input {
     width: 60%;
+  }
+
+  .footer-center {
+    grid-template-columns: 0.5fr 2fr 0.5fr 1fr;
+    justify-items: left;
   }
 }

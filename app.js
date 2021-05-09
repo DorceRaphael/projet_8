@@ -1,18 +1,13 @@
 // MOMENT
 
-// var moment = require("moment");
-// var myDate = new Date();
-// var myCoolDate = moment(myDate).format("LLL");
-// console.log(myCoolDate);
+const copyright = document.querySelector(".copyright");
+var moment = require("moment");
+var myDate = new Date();
+var myCoolDate = moment(myDate).format("YYYY");
+
+copyright.innerHTML = `copyright © Raphaël Dorce ${myCoolDate}`;
 
 // BASE
-// const panelHeader = document.querySelector(".panel-header");
-// const panel = document.querySelector(".panel");
-
-// panelHeader.addEventListener("click", function () {
-//   panel.classList.toggle("active");
-//   panelHeader.classList.toggle("active-btn");
-// });
 
 const panels = document.querySelectorAll(".panel");
 
