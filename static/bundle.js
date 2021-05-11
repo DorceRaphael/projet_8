@@ -8,7 +8,7 @@ var myCoolDate = moment(myDate).format("YYYY");
 
 copyright.innerHTML = `copyright © Raphaël Dorce ${myCoolDate}`;
 
-// BASE
+//  ------------------------------------------- BASE
 
 const panels = document.querySelectorAll(".panel");
 
@@ -16,17 +16,12 @@ panels.forEach(function (panel) {
   const panelHeader = panel.querySelector(".panel-header");
 
   panelHeader.addEventListener("click", function () {
-    // panels.forEach(function (item) {
-    //   if (item !== panel) {
-    //     item.classList.remove("active");
-    //   }
-    // });
     panel.classList.toggle("active");
     panelHeader.classList.toggle("active-btn");
   });
 });
 
-// METEO
+//  ------------------------------------------- METEO
 
 var input = document.querySelector(".input_text");
 var main = document.querySelector("#name");
@@ -68,7 +63,7 @@ button.addEventListener("click", function (name) {
     .catch((err) => input.classList.add("error"));
 });
 
-// CALCULATRICE
+//  ------------------------------------------- CALCULATRICE
 
 (function () {
   "use strict";
@@ -79,7 +74,6 @@ button.addEventListener("click", function (name) {
       // If passed an ID...
       return document.querySelector(element); // ... returns single element
     }
-
     return document.querySelectorAll(element); // Otherwise, returns a nodelist
   };
 
@@ -103,7 +97,6 @@ button.addEventListener("click", function (name) {
       // Otherwise, add digit to previous number (this is a string!)
       theNum += this.getAttribute("data-num");
     }
-
     viewer.innerHTML = theNum; // Display current number
   };
 
@@ -112,7 +105,6 @@ button.addEventListener("click", function (name) {
     oldNum = theNum;
     theNum = "";
     operator = this.getAttribute("data-ops");
-
     equals.setAttribute("data-result", ""); // Reset result in attr
   };
 
@@ -127,19 +119,15 @@ button.addEventListener("click", function (name) {
       case "plus":
         resultNum = oldNum + theNum;
         break;
-
       case "minus":
         resultNum = oldNum - theNum;
         break;
-
       case "times":
         resultNum = oldNum * theNum;
         break;
-
       case "divided by":
         resultNum = oldNum / theNum;
         break;
-
       // If equal is pressed without an operator, keep number and continue
       default:
         resultNum = theNum;
@@ -192,7 +180,7 @@ button.addEventListener("click", function (name) {
   el("#clear").onclick = clearAll;
 })();
 
-// CONVERSION
+// ------------------------------------------- CONVERSION
 
 var inputFeet = document.getElementById("input-feet");
 var inputMeters = document.getElementById("input-meters");
@@ -220,7 +208,7 @@ inputMm.addEventListener("input", function () {
   inputCm.value = inputMm.value * 0.1;
 });
 
-// FETE DU JOUR
+//  ------------------------------------------- FETE DU JOUR
 
 // async function getFete() {
 //   let response = await fetch(

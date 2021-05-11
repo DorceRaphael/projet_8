@@ -46,7 +46,7 @@ input::-webkit-inner-spin-button {
 }
 
 .active {
-  max-height: 600px;
+  max-height: 32rem;
 }
 
 .active-btn {
@@ -332,6 +332,37 @@ button:focus {
   border-radius: 5px;
 }
 
+/*------------------- FETE -------------------*/
+
+.fete {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 86%;
+  height: 22rem;
+  margin: 2.5rem auto 1rem;
+  border-radius: 15px;
+}
+
+.fete h2 {
+  font-size: 5rem;
+}
+
+.fete span {
+  margin-top: 2rem;
+  font-size: 2.5rem;
+}
+
+.fete img {
+  width: 100%;
+  border-radius: 15px;
+  opacity: 0.1;
+  position: absolute;
+  background: center/cover no-repeat;
+}
+
 /*------------------- FOOTER -------------------*/
 
 footer {
@@ -369,6 +400,8 @@ footer {
   color: white;
 }
 
+/*------------------- PC RESPONSIVE -------------------*/
+
 @media (min-width: 1000px) {
   main {
     display: grid;
@@ -383,6 +416,8 @@ footer {
       padding: 1rem 10vw;
     }
   }
+
+  /*------------------- HERO PC -------------------*/
 
   .hero {
     width: 85vw;
@@ -405,6 +440,8 @@ footer {
     width: 25rem;
   }
 
+  /*------------------- NAV PC -------------------*/
+
   nav h1 {
     font-size: 1.25rem;
   }
@@ -413,9 +450,13 @@ footer {
     width: 40vw;
   }
 
+  /*------------------- CALCULATRICE PC -------------------*/
+
   .calculator {
     width: 22rem;
   }
+
+  /*------------------- CONVERSION PC -------------------*/
 
   .conversion-grid {
     grid-template-columns: 1fr 1fr;
@@ -425,8 +466,10 @@ footer {
     width: 60%;
   }
 
+  /*------------------- FOOTER PC -------------------*/
+
   .footer-center {
-    grid-template-columns: 0.5fr 2fr 0.5fr 1fr;
+    grid-template-columns: 0.5fr 4fr 0.5fr 1fr;
     justify-items: left;
   }
 }

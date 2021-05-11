@@ -19,19 +19,21 @@
     <nav>
       <!-- nav header -->
       <div class="nav-header">
-        <img src="images/logo_rd.svg" class="logo" alt="logo" />
+        <img src="images/logo_rd.svg" class="logo" alt="logo du site de raphael dorce" />
       </div>
       <!-- social media -->
       <h1>WIDGETS</h1>
       <ul class="social-icons">
         <li>
-          <a href="https://github.com/DorceRaphael">
+          <a href="https://github.com/DorceRaphael" target="_blank">
             <i class="fab fa-github"></i>
           </a>
         </li>
         <li>
-          <a href="https://www.linkedin.com/in/raphael-dorce-524a32148/">
+          <a
+            href="https://www.linkedin.com/in/raphael-dorce-524a32148/" target="_blank">
             <i class="fab fa-linkedin"></i>
+          </a>
           </a>
         </li>
       </ul>
@@ -45,15 +47,15 @@
         <p>Utilise ces widgets pour gagner du temps!</p>
       </header>
       <article>
-        <img src="images/widgets_eventail.png" alt="" />
+        <img src="images/widgets_eventail.png" alt="eventail de widgets" />
       </article>
     </section>
 
     <!-- METEO -->
     <main>
-      <section class="panel">
+      <section class="panel" id="meteo">
         <header class="panel-header">
-          <h2>METEO</h2>
+          <h2>MÉTÉO</h2>
           <i class="fas fa-cloud-sun"></i>
         </header>
         <div class="input-city">
@@ -68,7 +70,7 @@
       </section>
 
       <!-- CALCULATRICE -->
-      <section class="panel">
+      <section class="panel" id="calculatrice">
         <header class="panel-header">
           <h2>CALCULATRICE</h2>
           <i class="fas fa-calculator"></i>
@@ -104,7 +106,7 @@
       </section>
 
       <!-- CONVERSION -->
-      <section class="panel">
+      <section class="panel" id="conversion">
         <header class="panel-header">
           <h2>CONVERSION</h2>
           <i class="fas fa-ruler"></i>
@@ -154,50 +156,54 @@
 
       <!-- FETE -->
 
-      <section class="panel">
+      <section class="panel" id="fete">
         <header class="panel-header">
           <h2>FÊTE DU JOUR</h2>
-          <i class="fas fa-cloud-sun"></i>
+          <i class="fas fa-birthday-cake"></i>
         </header>
-        <div class="input-city">
-          <input type="text" placeholder="Ville" class="input_text" />
-          <input type="submit" value="Valider" class="submit" />
-        </div>
-        <div class="card">
-          <h2 class="name" id="name"></h2>
-          <p class="temp"></p>
-          <p class="desc"></p>
-        </div>
+        <article class="fete">
+          <h2>Bonne fête!</h2>
+          <!-- Not clicable link -->
+          <span style="pointer-events: none; cursor: default">
+            <script
+              type="text/javascript"
+              src="http://www.net-pratique.fr/services/saintdujour.php"
+            ></script>
+          </span>
+          <img src="images/fireworks_3.gif" alt="">
+        </article>
       </section>
     </main>
+
     <!-- FOOTER -->
     <footer>
       <div class="footer-center">
         <header>
-          <img src="images/logo_rd.svg" class="logo" alt="logo" />
+          <img src="images/logo_rd.svg" class="logo" alt="logo du site du site de raphael dorce" />
         </header>
         <ul>
           <li>
-            <a href="">Météo</a>
+            <a href="index.html#meteo">Météo</a>
           </li>
           <li>
-            <a href="">Calculatrice</a>
+            <a href="index.html#calculatrice">Calculatrice</a>
           </li>
           <li>
-            <a href="">Conversion</a>
+            <a href="index.html#conversion">Conversion</a>
           </li>
           <li>
-            <a href="">Fête du jour</a>
+            <a href="index.html#fete">Fête du jour</a>
           </li>
         </ul>
         <ul class="social-icons">
           <li>
-            <a href="https://github.com/DorceRaphael">
+            <a href="https://github.com/DorceRaphael" target="_blank">
               <i class="fab fa-github"></i>
             </a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/raphael-dorce-524a32148/">
+            <a
+              href="https://www.linkedin.com/in/raphael-dorce-524a32148/" target="_blank">
               <i class="fab fa-linkedin"></i>
             </a>
           </li>
