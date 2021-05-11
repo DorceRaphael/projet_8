@@ -340,6 +340,7 @@ button:focus {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   width: 86%;
   height: 22rem;
   margin: 2.5rem auto 1rem;
@@ -347,20 +348,22 @@ button:focus {
 }
 
 .fete h2 {
-  font-size: 5rem;
+  padding: 0rem 1rem;
+  font-size: 3rem;
 }
 
 .fete span {
   margin-top: 2rem;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
 }
 
 .fete img {
-  width: 100%;
-  border-radius: 15px;
-  opacity: 0.1;
   position: absolute;
   background: center/cover no-repeat;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  opacity: 0.1;
 }
 
 /*------------------- FOOTER -------------------*/
@@ -464,6 +467,12 @@ footer {
 
   .conversion-input {
     width: 60%;
+  }
+
+  /*------------------- FETE PC -------------------*/
+
+  .fete h2 {
+    font-size: 4rem;
   }
 
   /*------------------- FOOTER PC -------------------*/
