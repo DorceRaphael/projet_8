@@ -10,8 +10,7 @@
 
 body {
   font-family: "Nunito", sans-serif;
-  background: linear-gradient(rgb(52, 152, 219, 0.1), rgb(44, 62, 80, 0.5))
-    fixed;
+  background: linear-gradient(rgb(226, 230, 233), rgb(181, 212, 243)) fixed;
   color: #2c3e50;
 }
 
@@ -50,7 +49,8 @@ input::-webkit-inner-spin-button {
 }
 
 .active-btn {
-  background: rgb(240, 244, 244);
+  background: #2c3e50;
+  color: white;
 }
 
 .panel header {
@@ -62,7 +62,9 @@ input::-webkit-inner-spin-button {
 }
 
 .panel header:hover {
-  background: rgb(240, 244, 244);
+  background: #2c3e50;
+  color: white;
+  cursor: pointer;
 }
 
 .panel header h2 {
@@ -117,7 +119,6 @@ nav h1 {
 }
 
 .logo {
-  height: 2rem;
   filter: invert(21%) sepia(10%) saturate(1736%) hue-rotate(169deg)
     brightness(98%) contrast(91%);
   animation: 1s ease-out 0s 1 forwards running fadeIn;
@@ -146,18 +147,20 @@ nav h1 {
 .hero {
   display: grid;
   grid-template-columns: 1fr;
+  justify-items: center;
   align-items: center;
   width: 85vw;
-  height: 40rem;
   margin: 0 auto;
 }
 
 .hero article {
-  justify-self: center;
+  display: flex;
+  justify-content: center;
 }
 
 .hero article img {
-  width: 20rem;
+  padding: 3rem;
+  width: 15rem;
 }
 
 .hero-header {
@@ -403,9 +406,57 @@ footer {
   color: white;
 }
 
-/*------------------- PC RESPONSIVE -------------------*/
+/*------------------- RESPONSIVE 320 and BELOW -------------------*/
 
-@media (min-width: 1000px) {
+@media screen and (max-width: 320px), screen and (min-width: 320px) {
+  .logo {
+    width: 2.5rem;
+  }
+
+  nav h1 {
+    font-size: 0.75rem;
+  }
+
+  .hero-header h2 {
+    font-size: 2rem;
+  }
+
+  .hero-header h2:nth-child(2) {
+    font-size: 3rem;
+  }
+
+  .hero article img {
+    width: 100%;
+  }
+}
+
+/*------------------- RESPONSIVE 425 -------------------*/
+
+@media screen and (min-width: 425px) {
+  .logo {
+    width: 4rem;
+  }
+
+  nav h1 {
+    font-size: 1rem;
+  }
+
+  .hero-header h2 {
+    font-size: 4rem;
+  }
+
+  .hero-header h2:nth-child(2) {
+    font-size: 5rem;
+  }
+
+  .hero article img {
+    width: 22.5rem;
+  }
+}
+
+/*------------------- RESPONSIVE 1024 -------------------*/
+
+@media screen and (min-width: 1024px) {
   main {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -420,11 +471,18 @@ footer {
     }
   }
 
-  /*------------------- HERO PC -------------------*/
+  /*------------------- NAV -------------------*/
+
+  nav h1 {
+    font-size: 1.25rem;
+  }
+
+  /*------------------- HERO 1024 -------------------*/
 
   .hero {
     width: 85vw;
     grid-template-columns: 2fr 1fr;
+    height: 40rem;
   }
 
   .hero-header h2 {
@@ -440,26 +498,20 @@ footer {
   }
 
   .hero article img {
-    width: 25rem;
-  }
-
-  /*------------------- NAV PC -------------------*/
-
-  nav h1 {
-    font-size: 1.25rem;
+    width: 22.5rem;
   }
 
   .panel {
     width: 40vw;
   }
 
-  /*------------------- CALCULATRICE PC -------------------*/
+  /*------------------- CALCULATRICE -------------------*/
 
   .calculator {
     width: 22rem;
   }
 
-  /*------------------- CONVERSION PC -------------------*/
+  /*------------------- CONVERSION -------------------*/
 
   .conversion-grid {
     grid-template-columns: 1fr 1fr;
@@ -469,13 +521,13 @@ footer {
     width: 60%;
   }
 
-  /*------------------- FETE PC -------------------*/
+  /*------------------- FETE -------------------*/
 
   .fete h2 {
     font-size: 4rem;
   }
 
-  /*------------------- FOOTER PC -------------------*/
+  /*------------------- FOOTER -------------------*/
 
   .footer-center {
     grid-template-columns: 0.5fr 4fr 0.5fr 1fr;

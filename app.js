@@ -10,13 +10,25 @@ copyright.innerHTML = `copyright © Raphaël Dorce ${myCoolDate}`;
 //  ------------------------------------------- BASE
 
 const panels = document.querySelectorAll(".panel");
+const panelHeaders = document.querySelectorAll(".panel-header");
 
 panels.forEach(function (panel) {
   const panelHeader = panel.querySelector(".panel-header");
 
-  panelHeader.addEventListener("click", function () {
+  panelHeader.addEventListener("click", function (e) {
+    panels.forEach(function (item) {
+      if (item !== panel) {
+        item.classList.remove("active");
+      }
+    });
+    panelHeaders.forEach(function (item) {
+      if (item !== e) {
+        item.classList.remove("active-btn");
+      }
+    });
+
     panel.classList.toggle("active");
-    panelHeader.classList.toggle("active-btn");
+    e.currentTarget.classList.toggle("active-btn");
   });
 });
 
@@ -26,7 +38,6 @@ var input = document.querySelector(".input_text");
 var main = document.querySelector("#name");
 var temp = document.querySelector(".temp");
 var desc = document.querySelector(".desc");
-var clouds = document.querySelector(".clouds");
 var button = document.querySelector(".submit");
 
 input.addEventListener("keyup", function (event) {
@@ -35,7 +46,7 @@ input.addEventListener("keyup", function (event) {
     button.click();
   }
 });
-button.addEventListener("click", function (name) {
+button.addEventListener("click", function () {
   async function getMeteo() {
     let response = await fetch(
       "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -51,7 +62,6 @@ button.addEventListener("click", function (name) {
       var tempValue = data["main"]["temp"];
       var nameValue = data["name"];
       var descValue = data["weather"][0]["icon"];
-
       main.innerHTML = nameValue;
       desc.innerHTML = `<img class="city-icon" src="http://openweathermap.org/img/wn/${descValue}@4x.png" alt="">`;
       temp.innerHTML = `Température: ${(tempValue - 273.15).toFixed(2)}°C`;
@@ -206,25 +216,3 @@ inputMm.addEventListener("input", function () {
   inputMeters.value = inputMm.value * 0.001;
   inputCm.value = inputMm.value * 0.1;
 });
-
-//  ------------------------------------------- FETE DU JOUR
-
-// async function getFete() {
-//   let response = await fetch(
-//     "https://fetedujour.fr/api/v2/xORhO8PB0wW2V1L6/text-normal"
-//   );
-//   let data = await response.json();
-//   // response.set("Access-Control-Allow-Origin", "*");
-//   return data;
-// }
-
-// getFete().then((data) => console.log(data));
-
-//   .catch((err) => alert("HUH?"));
-
-// axios
-//   .get("https://fetedujour.fr/api/v2/bl37qFNeX6QYVsY6/text-normal")
-//   .then((response) => {
-//     console.log(response.data);
-//   })
-//   .catch((error) => console.error(error));
