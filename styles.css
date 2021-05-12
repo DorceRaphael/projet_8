@@ -25,12 +25,6 @@ a:active {
   text-decoration: none;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
 .panel {
   background: white;
   width: 80vw;
@@ -44,6 +38,7 @@ input::-webkit-inner-spin-button {
   transition: all 0.5s ease-out;
 }
 
+/* panel deployé */
 .active {
   max-height: 32rem;
 }
@@ -84,7 +79,7 @@ nav {
   margin: 0 auto 3rem;
   padding: 1rem 10vw;
 
-  /* STICKY NAV */
+  /* sticky nav */
   /* position: sticky;
   top: 0;
   z-index: 999; */
@@ -135,7 +130,7 @@ nav h1 {
   font-size: 1.25rem;
   color: #2c3e50;
 
-  /* CIRCLE BORDER */
+  /* circle border */
   /* display: inline-block;
   border: 1px #201e40 solid;
   border-radius: 50%;
@@ -245,7 +240,7 @@ nav h1 {
   text-align: center;
 }
 
-/* ICONE API */
+/* icone api meteo */
 
 .city-icon {
   width: 10rem;

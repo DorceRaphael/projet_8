@@ -17,11 +17,14 @@ panels.forEach(function (panel) {
   const panelHeader = panel.querySelector(".panel-header");
 
   panelHeader.addEventListener("click", function (e) {
+    // ferme les autres widgets non cliqués
     panels.forEach(function (item) {
       if (item !== panel) {
         item.classList.remove("active");
       }
     });
+
+    // retire le fond des boutons des widgets non cliqués
     panelHeaders.forEach(function (item) {
       if (item !== e) {
         item.classList.remove("active-btn");
@@ -42,6 +45,7 @@ var desc = document.querySelector(".desc");
 var button = document.querySelector(".submit");
 
 input.addEventListener("keyup", function (event) {
+  // valider avec la touche entrée
   if (event.keyCode === 13) {
     event.preventDefault();
     button.click();
