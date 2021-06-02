@@ -1,0 +1,11 @@
+browserify app.js -o bundle.js
+
+efa92f71bc6b12a9b2a917e520c8c9d5
+
+https://api.openweathermap.org/data/2.5/weather?id=3033123&appid=efa92f71bc6b12a9b2a917e520c8c9d5
+
+xORhO8PB0wW2V1L6
+
+http://fetedujour.fr/api/v2/xORhO8PB0wW2V1L6/text-normal
+
+https://fetedujour.fr/api/v2/VOTRECLE/json-normal-10-5?api_key=xORhO8PB0wW2V1L6&f=json
